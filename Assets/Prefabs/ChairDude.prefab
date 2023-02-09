@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 3722969428821359863}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f3d53822f02222e43bf1ad201be5c092, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 3828231324845154382}
   - component: {fileID: 5528888884790262059}
   - component: {fileID: 3691355078033721328}
+  - component: {fileID: 9082464549272863796}
   m_Layer: 0
   m_Name: ChairDude
   m_TagString: Untagged
@@ -155,7 +156,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: ec35588e0a16b454a9b895dc003d0c79, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -187,6 +188,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6252104, y: 0.6778127}
   m_EdgeRadius: 0
+--- !u!114 &9082464549272863796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057330977946767606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5769b7b33825b40a3171d588a54c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: {fileID: 5897050443293051095}
+  bottom: {fileID: 3722969428821359863}
 --- !u!1 &5897050443293051095
 GameObject:
   m_ObjectHideFlags: 0
