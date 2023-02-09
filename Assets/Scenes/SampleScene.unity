@@ -262,5 +262,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChairDude
       objectReference: {fileID: 0}
+    - target: {fileID: 9082464549272863796, guid: 58af73edf6641ae44ba936fd33f66740, type: 3}
+      propertyPath: shotForce
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58af73edf6641ae44ba936fd33f66740, type: 3}
