@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class PanelAnimation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public float focusHeight = 100;
+    private RectTransform rectTransform;
+
+    private void Awake()
     {
-        
+        rect = GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+
+        if (Input.GetMouseButton(0)) rectTransform.rect.Set();
+
     }
 }
