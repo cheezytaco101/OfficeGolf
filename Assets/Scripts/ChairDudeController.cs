@@ -10,6 +10,9 @@ public class ChairDudeController : MonoBehaviour
     public GameObject shotgun;
     public GameObject shotgunPivot;
     public GameObject shotgunBlast;
+    public GameObject shotgunScatter;
+    public GameObject shotgunSmoke;
+    public GameObject shotgunShell;
 
     private Animator topAnimator;
     private Animator bottomAnimator;
@@ -78,6 +81,11 @@ public class ChairDudeController : MonoBehaviour
             Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
             body.velocity = ((relativeMousePosition.normalized * shotForce) * -1);
             shotgunBlast.GetComponent<ParticleSystem>().Play();
+            shotgunSmoke.GetComponent<ParticleSystem>().Play();
+            shotgunScatter.GetComponent<ParticleSystem>().Play();
+            shotgunShell.GetComponent<ParticleSystem>().Play();
+
+
 
         }
 
