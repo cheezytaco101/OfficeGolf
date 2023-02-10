@@ -9,6 +9,7 @@ public class ChairDudeController : MonoBehaviour
     public GameObject bottom;
     public GameObject shotgun;
     public GameObject shotgunPivot;
+    public GameObject shotgunBlast;
 
     private Animator topAnimator;
     private Animator bottomAnimator;
@@ -17,6 +18,8 @@ public class ChairDudeController : MonoBehaviour
     private Rigidbody2D body;
 
     public float shotForce = 10f;
+
+    private float fixedDeltaTime;
 
 
     // Start is called before the first frame update
@@ -27,6 +30,8 @@ public class ChairDudeController : MonoBehaviour
         bottomAnimator = bottom.GetComponent<Animator>();
         shotgunSprite = shotgun.GetComponent<SpriteRenderer>();
         body = GetComponent<Rigidbody2D>();
+
+        this.fixedDeltaTime = Time.fixedDeltaTime;
 
     }
 
@@ -61,7 +66,18 @@ public class ChairDudeController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
 
-            body.AddForce((relativeMousePosition.normalized * shotForce) * -1);
+            Time.timeScale = 0.5f;
+            Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+
+            Time.timeScale = 1;
+            Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+            body.velocity = ((relativeMousePosition.normalized * shotForce) * -1);
+            shotgunBlast.GetComponent<ParticleSystem>().Play();
 
         }
 
