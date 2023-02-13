@@ -10,14 +10,14 @@ public class PanelAnimation : MonoBehaviour
 
     private void Awake()
     {
-        rect = GetComponent<RectTransform>();
+        rectTransform = GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
 
-        if (Input.GetMouseButton(0)) rectTransform.rect.Set();
+        //if (Input.GetMouseButton(0)) rectTransform.rect.Set();
 
     }
 }
