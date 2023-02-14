@@ -13,6 +13,7 @@ public class ChairDudeController : MonoBehaviour
     public GameObject shotgunScatter;
     public GameObject shotgunSmoke;
     public GameObject shotgunShell;
+    public GameObject noteParticle;
 
     private Animator topAnimator;
     private Animator bottomAnimator;
@@ -23,6 +24,8 @@ public class ChairDudeController : MonoBehaviour
     public float shotForce = 10f;
 
     private float fixedDeltaTime;
+
+    private bool idle = false;
 
 
     // Start is called before the first frame update
@@ -59,6 +62,8 @@ public class ChairDudeController : MonoBehaviour
         bottomAnimator.SetFloat("VelocityX", body.velocity.x);
         bottomAnimator.SetFloat("VelocityY", body.velocity.y);
 
+        Idle();
+
 
 
     }
@@ -87,6 +92,24 @@ public class ChairDudeController : MonoBehaviour
 
 
 
+        }
+
+    }
+
+    void Idle()
+    {
+
+        if (body.velocity.magnitude < 1 && idle != true)
+        {
+            topAnimator.SetBool("Idle", true);
+            noteParticle.GetComponent<ParticleSystem>().Play();
+            idle = true;
+        }
+        else if (body.velocity.magnitude >= 1)
+        {
+            topAnimator.SetBool("Idle", false);
+            noteParticle.GetComponent<ParticleSystem>().Stop();
+            idle = false;
         }
 
     }
