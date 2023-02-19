@@ -19,6 +19,13 @@ public class ChairDudeController : MonoBehaviour
     private Animator bottomAnimator;
     private SpriteRenderer shotgunSprite;
 
+    private AudioSource audioSource;
+    public GameObject shotgunClickAudio;
+    public GameObject shotgunBlastAudio;
+    public GameObject thumpAudio;
+    public GameObject rollingAudio;
+
+
     private Rigidbody2D body;
 
     public float shotForce = 10f;
@@ -36,6 +43,7 @@ public class ChairDudeController : MonoBehaviour
         bottomAnimator = bottom.GetComponent<Animator>();
         shotgunSprite = shotgun.GetComponent<SpriteRenderer>();
         body = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
 
         this.fixedDeltaTime = Time.fixedDeltaTime;
 
@@ -76,6 +84,7 @@ public class ChairDudeController : MonoBehaviour
 
             Time.timeScale = 0.5f;
             Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+            shotgunClickAudio.GetComponent<AudioSource>().Play();
 
         }
 
@@ -89,7 +98,7 @@ public class ChairDudeController : MonoBehaviour
             shotgunSmoke.GetComponent<ParticleSystem>().Play();
             shotgunScatter.GetComponent<ParticleSystem>().Play();
             shotgunShell.GetComponent<ParticleSystem>().Play();
-
+            shotgunBlastAudio.GetComponent<AudioSource>().Play();
 
 
         }
@@ -110,7 +119,13 @@ public class ChairDudeController : MonoBehaviour
             topAnimator.SetBool("Idle", false);
             noteParticle.GetComponent<ParticleSystem>().Stop();
             idle = false;
+            
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        thumpAudio.GetComponent<AudioSource>().Play();
     }
 }
