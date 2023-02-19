@@ -72,7 +72,7 @@ public class ChairDudeController : MonoBehaviour
 
         Idle();
 
-
+        thumpAudio.GetComponent<AudioSource>().volume = body.velocity.magnitude / 30;
 
     }
 

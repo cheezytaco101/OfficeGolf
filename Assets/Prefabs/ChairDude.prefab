@@ -9924,7 +9924,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e6eae1c717f09914987da2dd849f05e8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.614
+  m_Volume: 0.424
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10266,9 +10266,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 19327ded31431a7469815953247aeecd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 517f6e5f7766fd94f955f08fdc9d0323, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.104
+  m_Volume: 0.109
   m_Pitch: 0.39
   Loop: 0
   Mute: 0
