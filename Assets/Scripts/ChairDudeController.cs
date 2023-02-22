@@ -47,7 +47,9 @@ public class ChairDudeController : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
 
-        this.fixedDeltaTime = Time.fixedDeltaTime;
+        Time.fixedDeltaTime = 0.02f;
+        this.fixedDeltaTime = 0.02f;
+        Time.timeScale = 1;
 
     }
 

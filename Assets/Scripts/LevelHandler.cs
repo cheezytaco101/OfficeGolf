@@ -12,6 +12,7 @@ public class LevelHandler : MonoBehaviour
 
     public GameObject coffee;
     public GameObject restartNotif;
+    public GameObject winNotif;
     public GameObject shellsUi;
 
     private void Start()
@@ -22,9 +23,12 @@ public class LevelHandler : MonoBehaviour
     private void Update()
     {
 
+        print(Time.fixedDeltaTime);
+
         if (coffee == null)
         {
-            Invoke("LoadNext", 1);
+            Invoke("LoadNext", 3);
+            winNotif.SetActive(true);
         }
         else if (ammo == 0 && coffee != null)
         {
