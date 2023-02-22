@@ -5,6 +5,8 @@ using UnityEngine;
 public class ChairDudeController : MonoBehaviour
 {
 
+    public GameObject LevelHandler;
+
     public GameObject top;
     public GameObject bottom;
     public GameObject shotgun;
@@ -88,7 +90,7 @@ public class ChairDudeController : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && LevelHandler.GetComponent<LevelHandler>().ammo != 0)
         {
 
             Time.timeScale = 1;
@@ -99,7 +101,7 @@ public class ChairDudeController : MonoBehaviour
             shotgunScatter.GetComponent<ParticleSystem>().Play();
             shotgunShell.GetComponent<ParticleSystem>().Play();
             shotgunBlastAudio.GetComponent<AudioSource>().Play();
-
+            LevelHandler.GetComponent<LevelHandler>().ammo -= 1;
 
         }
 
