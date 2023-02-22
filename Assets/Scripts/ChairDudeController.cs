@@ -102,7 +102,7 @@ public class ChairDudeController : MonoBehaviour
             shotgunShell.GetComponent<ParticleSystem>().Play();
             shotgunBlastAudio.GetComponent<AudioSource>().Play();
             LevelHandler.GetComponent<LevelHandler>().ammo -= 1;
-
+            LevelHandler.GetComponent<LevelHandler>().UpdateShells();
         }
 
     }

@@ -12,6 +12,12 @@ public class LevelHandler : MonoBehaviour
 
     public GameObject coffee;
     public GameObject restartNotif;
+    public GameObject shellsUi;
+
+    private void Start()
+    {
+        UpdateShells();
+    }
 
     private void Update()
     {
@@ -45,6 +51,20 @@ public class LevelHandler : MonoBehaviour
     private void RestartNotif()
     {
         restartNotif.SetActive(true);
+    }
+
+    public void UpdateShells()
+    { 
+        for (int i = 0; shellsUi.transform.childCount > i; i++)
+        {
+            if (i + 1 <= ammo)
+            {
+                shellsUi.transform.GetChild(i).gameObject.SetActive(true);
+            } else
+            {
+                shellsUi.transform.GetChild(i).gameObject.SetActive(false);
+            }
+        }
     }
 
     private void LoadMenu()
