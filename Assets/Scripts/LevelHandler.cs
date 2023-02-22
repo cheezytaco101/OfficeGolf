@@ -23,8 +23,6 @@ public class LevelHandler : MonoBehaviour
     private void Update()
     {
 
-        print(Time.fixedDeltaTime);
-
         if (coffee == null)
         {
             Invoke("LoadNext", 3);
