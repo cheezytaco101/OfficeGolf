@@ -5,7 +5,7 @@ using UnityEngine;
 public class InstructionsHandler : MonoBehaviour
 {
 
-    // Update is called once per frame
+    //Used as a breif tutorial message at the beggining of the game
     void Update()
     {
         if (Input.GetMouseButtonDown(0))

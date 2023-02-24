@@ -21,7 +21,7 @@ public class PanelAnimation : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        //Lerp panels to squeeze aspect ratio
         if (Input.GetMouseButton(0))
         {
 

@@ -10210,6 +10210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5769b7b33825b40a3171d588a54c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelHandler: {fileID: 0}
   top: {fileID: 5897050443293051095}
   bottom: {fileID: 3722969428821359863}
   shotgun: {fileID: 1146963628525059659}
@@ -10224,6 +10225,7 @@ MonoBehaviour:
   thumpAudio: {fileID: 5174849613391586405}
   rollingAudio: {fileID: 5992354267037752225}
   shotForce: 700
+  bulletTime: 0.3
 --- !u!1 &5174849613391586405
 GameObject:
   m_ObjectHideFlags: 0

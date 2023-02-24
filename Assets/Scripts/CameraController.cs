@@ -17,6 +17,7 @@ public class CameraController : MonoBehaviour
     private void Awake()
     {
         camera = GetComponent<Camera>();
+        //reset camera size
         this.size = camera.orthographicSize;
     }
 
@@ -24,9 +25,11 @@ public class CameraController : MonoBehaviour
     void FixedUpdate()
     {
 
+        //Lerp towards player
         transform.position = new Vector3(Mathf.Lerp(transform.position.x, follow.transform.position.x, lerpAmount), Mathf.Lerp(transform.position.y, follow.transform.position.y, lerpAmount), -10);
-
+        //Lerp to zoom when mouse is held
         if (Input.GetMouseButton(0)) camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, zoomSize, zoomSpeed);
+        //Lerp out size when mouse released
         else camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, size, zoomSpeed);
 
     }
