@@ -88,7 +88,7 @@ public class ChairDudeController : MonoBehaviour
         Idle();
 
         //Adjust volume of bump relative to velocity
-        thumpAudio.GetComponent<AudioSource>().volume = body.velocity.magnitude / 30;
+        thumpAudio.GetComponent<AudioSource>().volume = body.velocity.magnitude / 60;
 
     }
 

@@ -1099,7 +1099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a4e844954075845afd1e1f807757e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: 6
+  ammo: 5
   nextLevel: Level4
   currentLevel: Level3
   coffee: {fileID: 1738628948}

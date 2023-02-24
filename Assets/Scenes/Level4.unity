@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a4e844954075845afd1e1f807757e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: 5
+  ammo: 4
   nextLevel: Level5
   currentLevel: Level4
   coffee: {fileID: 1738628948}
